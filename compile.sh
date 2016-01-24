@@ -43,6 +43,8 @@ done
 printf "Regenerating Package Index... "
 make "package/index" &> /dev/null && printf "[Success]\n" || printf "[Failed!]\n"
 printf "Singing Packages... "
-"$SIGN_PACKAGES_SCRIPT" "$ABSOLUTE_SCRIPT_PATH/bin" "$ABSOLUTE_SCRIPT_PATH/keys"  && printf "[Success]\n" || printf "[Failed!]\n"
+"$SIGN_PACKAGES_SCRIPT" "$ABSOLUTE_SCRIPT_PATH/bin" "$ABSOLUTE_SCRIPT_PATH/keys" &> /dev/null && printf "[Success]\n" || printf "[Failed!]\n"
+
+echo "All Tasks Done!"
 
 exit 0
